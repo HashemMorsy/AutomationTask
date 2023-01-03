@@ -1,7 +1,0 @@
--------------------------------------------------------------------------------
-Test set: org.example.testRunner.TestRunner
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.434 s <<< FAILURE! - in org.example.testRunner.TestRunner
-setUpClass(org.example.testRunner.TestRunner)  Time elapsed: 1.176 s  <<< FAILURE!
-java.lang.NoSuchMethodError: 'java.util.stream.Stream io.cucumber.gherkin.GherkinParser.parse(java.lang.String, java.io.InputStream)'
-
