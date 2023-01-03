@@ -4,16 +4,16 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.example.pages.P02_home;
-import org.example.pages.P03_login;
 import org.openqa.selenium.By;
 import org.testng.asserts.SoftAssert;
+import pages.P02_home;
+import pages.P03_login;
 
 import static org.example.stepDefs.Hooks.driver;
 
 public class D02_loginStepDef {
-    private final P03_login login = new P03_login();
-    private final P02_home home = new P02_home();
+    private final P03_login login = new P03_login(driver);
+    private final P02_home home = new P02_home(driver);
 
     @Given("user go to login page")
     public void user_go_to_login_page() {

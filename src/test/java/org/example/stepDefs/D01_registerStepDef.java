@@ -4,17 +4,17 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.example.pages.P01_register;
-import org.example.pages.P02_home;
 import org.testng.asserts.SoftAssert;
+import pages.P01_register;
+import pages.P02_home;
 
 import java.text.SimpleDateFormat;
 
 import static org.example.stepDefs.Hooks.driver;
 
 public class D01_registerStepDef {
-    private final P01_register register = new P01_register();
-    private final P02_home home = new P02_home();
+    private final P01_register register = new P01_register(driver);
+    private final P02_home home = new P02_home(driver);
 
     public D01_registerStepDef() {
     }

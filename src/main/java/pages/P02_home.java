@@ -1,10 +1,17 @@
-package org.example.pages;
+package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import static org.example.stepDefs.Hooks.driver;
 
 public class P02_home {
+
+    private WebDriver driver;
+
+    public P02_home(WebDriver driver)
+    {
+        this.driver = driver;
+    }
 
     public WebElement registerButton() {
         return driver.findElement(By.cssSelector("a[class=\"ico-register\"]"));
