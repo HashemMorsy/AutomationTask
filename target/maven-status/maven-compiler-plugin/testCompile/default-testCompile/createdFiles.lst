@@ -1,5 +1,4 @@
 org\example\pages\P02_home.class
-org\example\DataProfider\userData.class
 org\example\pages\P01_register.class
 org\example\pages\P03_login.class
 org\example\testRunner\TestRunner.class
