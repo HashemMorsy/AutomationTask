@@ -7,18 +7,17 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Hooks {
 
-    public static WebDriver driver;
+    public static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     @Before()
-    public static void OpenBrowser() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
-        driver.get("https://demo.nopcommerce.com/");
+    public void OpenBrowser() {
+        driver.set(new ChromeDriver());
+        driver.get().manage().window().maximize();
+        driver.get().get("https://demo.nopcommerce.com/");
     }
 
     @After
-    public static void quitDriver() {
-        driver.quit();
+    public void quitDriver() {
+        driver.get().quit();
     }
 }

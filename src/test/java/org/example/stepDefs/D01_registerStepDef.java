@@ -15,8 +15,8 @@ import java.text.SimpleDateFormat;
 import static org.example.stepDefs.Hooks.driver;
 
 public class D01_registerStepDef {
-    private final P01_register register = new P01_register(driver);
-    private final P02_home home = new P02_home(driver);
+    private final P01_register register = new P01_register(driver.get());
+    private final P02_home home = new P02_home(driver.get());
 
     public D01_registerStepDef() {
     }
@@ -81,7 +81,7 @@ public class D01_registerStepDef {
 //        first assertion
         soft.assertEquals(actual.contains(expected), true);
 //        second assertion
-        soft.assertEquals(driver.getCurrentUrl(),
+        soft.assertEquals(driver.get().getCurrentUrl(),
                 "https://demo.nopcommerce.com/registerresult/1?returnUrl=/");
         soft.assertAll();
     }

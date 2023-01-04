@@ -12,8 +12,8 @@ import pages.P03_login;
 import static org.example.stepDefs.Hooks.driver;
 
 public class D02_loginStepDef {
-    private final P03_login login = new P03_login(driver);
-    private final P02_home home = new P02_home(driver);
+    private final P03_login login = new P03_login(driver.get());
+    private final P02_home home = new P02_home(driver.get());
 
     @Given("user go to login page")
     public void user_go_to_login_page() {
@@ -43,7 +43,7 @@ public class D02_loginStepDef {
     public void userLoginToTheSystemSuccessfully() {
         SoftAssert soft = new SoftAssert();
         //1
-        soft.assertEquals(driver.getCurrentUrl(), "https://demo.nopcommerce.com/");
+        soft.assertEquals(driver.get().getCurrentUrl(), "https://demo.nopcommerce.com/");
 
         //2
         soft.assertTrue(home.MyAccountTab().isDisplayed(),
@@ -74,7 +74,7 @@ public class D02_loginStepDef {
         soft.assertEquals(home.registerButton().isEnabled(), true);
 
         //2
-        soft.assertTrue(driver.findElements(By.xpath("//a[@class= 'ico-account']")).size() < 1);
+        soft.assertTrue(driver.get().findElements(By.xpath("//a[@class= 'ico-account']")).size() < 1);
 
         soft.assertAll();
     }
