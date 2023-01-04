@@ -3,13 +3,13 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
+import testDataTypes.Customer;
 
 public class P01_register {
-    
+
     private WebDriver driver;
-    
-    public P01_register(WebDriver driver)
-    {
+
+    public P01_register(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -71,5 +71,15 @@ public class P01_register {
     public void selectYearOfBerth(String year) {
         Select DayOfBerth1 = new Select(driver.findElement(yearOfBerth));
         DayOfBerth1.selectByValue(year);
+    }
+
+    public void fill_PersonalDetails(Customer customer) {
+        clickGenderMale();
+        enterFirstName(customer.firstName);
+        enterLastName(customer.lastName);
+        interEmail(customer.emailAddress);
+        interPassword(customer.password);
+        interConfirmPassword(customer.confirmPassword);
+
     }
 }

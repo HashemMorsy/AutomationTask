@@ -4,9 +4,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import managers.FileReaderManager;
 import org.testng.asserts.SoftAssert;
 import pages.P01_register;
 import pages.P02_home;
+import testDataTypes.Customer;
 
 import java.text.SimpleDateFormat;
 
@@ -23,6 +25,14 @@ public class D01_registerStepDef {
     public void user_go_to_register_page() {
         home.clickRegisterLink();
     }
+
+    /////////////
+    @When("he enters {string} personal details on register page")
+    public void he_enters_personal_details_on_register_page(String customerName) {
+        Customer customer = FileReaderManager.getInstance().getJsonReader().getCustomerByName(customerName);
+        register.fill_PersonalDetails(customer);
+    }
+    /////////////
 
     @When("user select gender type")
     public void userSelectGenderType() {

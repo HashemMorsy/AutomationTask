@@ -13,7 +13,7 @@ public class Hooks {
     public static void OpenBrowser() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
         driver.get("https://demo.nopcommerce.com/");
     }
 
