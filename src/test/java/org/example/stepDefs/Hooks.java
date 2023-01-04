@@ -9,7 +9,7 @@ public class Hooks {
 
     public static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-    @Before()
+    @Before(value = "@smoke")
     public void OpenBrowser() {
         driver.set(new ChromeDriver());
         driver.get().manage().window().maximize();
