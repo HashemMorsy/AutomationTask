@@ -2,6 +2,7 @@ package org.example.stepDefs;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import managers.FileReaderManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -13,7 +14,7 @@ public class Hooks {
     public void OpenBrowser() {
         driver.set(new ChromeDriver());
         driver.get().manage().window().maximize();
-        driver.get().get("https://demo.nopcommerce.com/");
+        driver.get().get(FileReaderManager.getInstance().getConfigReader().getApplicationUrl());
     }
 
     @After
