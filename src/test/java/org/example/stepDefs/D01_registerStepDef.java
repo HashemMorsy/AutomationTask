@@ -18,9 +18,6 @@ public class D01_registerStepDef {
     private final P01_register register = new P01_register(driver.get());
     private final P02_home home = new P02_home(driver.get());
 
-    public D01_registerStepDef() {
-    }
-
     @Given("user go to register page")
     public void user_go_to_register_page() {
         home.clickRegisterLink();
