@@ -6,27 +6,27 @@ import org.openqa.selenium.WebDriver;
 
 public class P03_login {
 
-    private WebDriver driver;
+    private final WebDriver driver;
 
     public P03_login(WebDriver driver)
     {
         this.driver = driver;
     }
 
-    private static final By Email = By.id("Email");
-    private static final By Password = By.id("Password");
-    private static final By LoginButton = By.cssSelector("button[class=\"button-1 login-button\"]");
+    private static final By email = By.id("Email");
+    private static final By password = By.id("Password");
+    private static final By loginButton = By.cssSelector("button[class=\"button-1 login-button\"]");
 
     public void setEmail(String E) {
-        driver.findElement(Email).sendKeys(E);
+        driver.findElement(email).sendKeys(E);
     }
 
     public void setPassword(String P) {
-        driver.findElement(Password).sendKeys(P);
+        driver.findElement(password).sendKeys(P);
     }
 
     public void clickLoginButton() {
-        driver.findElement(LoginButton).click();
+        driver.findElement(loginButton).click();
     }
 
 }

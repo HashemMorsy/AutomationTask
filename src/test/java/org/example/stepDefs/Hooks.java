@@ -13,7 +13,7 @@ public class Hooks {
     public static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     @Before(value = "@smoke")
-    public void OpenBrowser() {
+    public void openBrowser() {
         driver.set(new ChromeDriver());
         driver.get().manage().window().maximize();
         driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(FileReaderManager.getInstance().getConfigReader().getImplicitlyWait()));

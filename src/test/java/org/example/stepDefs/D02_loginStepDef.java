@@ -46,7 +46,7 @@ public class D02_loginStepDef {
         soft.assertEquals(driver.get().getCurrentUrl(), "https://demo.nopcommerce.com/");
 
         //2
-        soft.assertTrue(home.MyAccountTab().isDisplayed(),
+        soft.assertTrue(home.myAccountTab().isDisplayed(),
                 "my account tab not found");
         soft.assertAll();
     }

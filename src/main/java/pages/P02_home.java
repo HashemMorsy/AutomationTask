@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 public class P02_home {
 
-    private WebDriver driver;
+    private final WebDriver driver;
 
     public P02_home(WebDriver driver)
     {
@@ -24,7 +24,7 @@ public class P02_home {
     private static final By
             myAccountTab = By.cssSelector("a[class=\"ico-account\"]");
     private static final By
-            ErrorMessage = By.cssSelector("div[class=\"message-error validation-summary-errors\"]");
+            errorMessage = By.cssSelector("div[class=\"message-error validation-summary-errors\"]");
 
     public void clickRegisterLink() {
         registerButton().click();
@@ -38,7 +38,7 @@ public class P02_home {
         driver.findElement(logoutLink).click();
     }
 
-    public WebElement MyAccountTab() {
+    public WebElement myAccountTab() {
         return driver.findElement(myAccountTab);
     }
 
@@ -47,7 +47,7 @@ public class P02_home {
     }
 
     public String getErrorMessage() {
-        return driver.findElement(ErrorMessage).getText();
+        return driver.findElement(errorMessage).getText();
     }
 
 }

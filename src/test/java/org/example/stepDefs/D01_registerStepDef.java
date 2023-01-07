@@ -46,23 +46,23 @@ public class D01_registerStepDef {
     @And("user enter date of birth")
     public void userEnterDateOfBirth() {
         // Day
-        register.selectDayOfBerth(12);
+        register.selectDayOfBirth(12);
         // Month
-        register.selectMonthOfBerth("January");
+        register.selectMonthOfBirth("January");
         // Year
-        register.selectYearOfBerth("1995");
+        register.selectYearOfBirth("1995");
     }
 
     @And("user enter email field")
     public void userEnterEmailField() {
         String email = new SimpleDateFormat("MMddHHmmss").format(new java.util.Date()) + "@test.com";
-        register.interEmail(email);
+        register.enterEmail(email);
     }
 
     @And("user fills Password fields {string} {string}")
     public void userFillsPasswordFields(String arg0, String arg1) {
-        register.interPassword(arg0);
-        register.interConfirmPassword(arg1);
+        register.enterPassword(arg0);
+        register.enterConfirmPassword(arg1);
     }
 
     @And("user clicks on register button")
