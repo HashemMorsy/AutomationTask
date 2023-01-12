@@ -2,7 +2,6 @@ package org.example.testRunner;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
-import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
         plugin = {"pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
@@ -12,11 +11,14 @@ import org.testng.annotations.DataProvider;
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 
+    /*
     // to run scenarios in parallel
     @Override
     @DataProvider(parallel = true)
     public Object[][] scenarios() {
         return super.scenarios();
     }
+    
+     */
 
 }
